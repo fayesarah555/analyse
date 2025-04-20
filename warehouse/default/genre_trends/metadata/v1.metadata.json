@@ -1,0 +1,106 @@
+{
+  "format-version" : 1,
+  "table-uuid" : "0d7f604a-5723-4d49-9284-cf927d8110a2",
+  "location" : "/data/warehouse/default/genre_trends",
+  "last-updated-ms" : 1745101517400,
+  "last-column-id" : 4,
+  "schema" : {
+    "type" : "struct",
+    "schema-id" : 0,
+    "fields" : [ {
+      "id" : 1,
+      "name" : "month",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 2,
+      "name" : "genre",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 3,
+      "name" : "num_sales",
+      "required" : false,
+      "type" : "long"
+    }, {
+      "id" : 4,
+      "name" : "total_revenue",
+      "required" : false,
+      "type" : "double"
+    } ]
+  },
+  "current-schema-id" : 0,
+  "schemas" : [ {
+    "type" : "struct",
+    "schema-id" : 0,
+    "fields" : [ {
+      "id" : 1,
+      "name" : "month",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 2,
+      "name" : "genre",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 3,
+      "name" : "num_sales",
+      "required" : false,
+      "type" : "long"
+    }, {
+      "id" : 4,
+      "name" : "total_revenue",
+      "required" : false,
+      "type" : "double"
+    } ]
+  } ],
+  "partition-spec" : [ ],
+  "default-spec-id" : 0,
+  "partition-specs" : [ {
+    "spec-id" : 0,
+    "fields" : [ ]
+  } ],
+  "last-partition-id" : 999,
+  "default-sort-order-id" : 0,
+  "sort-orders" : [ {
+    "order-id" : 0,
+    "fields" : [ ]
+  } ],
+  "properties" : {
+    "owner" : "spark"
+  },
+  "current-snapshot-id" : 6682899312955514636,
+  "refs" : {
+    "main" : {
+      "snapshot-id" : 6682899312955514636,
+      "type" : "branch"
+    }
+  },
+  "snapshots" : [ {
+    "snapshot-id" : 6682899312955514636,
+    "timestamp-ms" : 1745101517400,
+    "summary" : {
+      "operation" : "append",
+      "spark.app.id" : "local-1745101491242",
+      "added-data-files" : "1",
+      "added-records" : "23",
+      "added-files-size" : "1594",
+      "changed-partition-count" : "1",
+      "total-records" : "23",
+      "total-files-size" : "1594",
+      "total-data-files" : "1",
+      "total-delete-files" : "0",
+      "total-position-deletes" : "0",
+      "total-equality-deletes" : "0"
+    },
+    "manifest-list" : "/data/warehouse/default/genre_trends/metadata/snap-6682899312955514636-1-798420ed-3228-423c-8533-feb49c1bd5f7.avro",
+    "schema-id" : 0
+  } ],
+  "statistics" : [ ],
+  "snapshot-log" : [ {
+    "timestamp-ms" : 1745101517400,
+    "snapshot-id" : 6682899312955514636
+  } ],
+  "metadata-log" : [ ]
+}

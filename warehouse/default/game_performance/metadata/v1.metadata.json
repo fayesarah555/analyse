@@ -1,0 +1,156 @@
+{
+  "format-version" : 1,
+  "table-uuid" : "ae322163-019e-4855-a029-a39edec92123",
+  "location" : "/data/warehouse/default/game_performance",
+  "last-updated-ms" : 1745101089337,
+  "last-column-id" : 9,
+  "schema" : {
+    "type" : "struct",
+    "schema-id" : 0,
+    "fields" : [ {
+      "id" : 1,
+      "name" : "game_id",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 2,
+      "name" : "game_title",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 3,
+      "name" : "genre",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 4,
+      "name" : "platform",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 5,
+      "name" : "publisher",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 6,
+      "name" : "num_sales",
+      "required" : false,
+      "type" : "long"
+    }, {
+      "id" : 7,
+      "name" : "units_sold",
+      "required" : false,
+      "type" : "long"
+    }, {
+      "id" : 8,
+      "name" : "total_revenue",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 9,
+      "name" : "avg_discount",
+      "required" : false,
+      "type" : "double"
+    } ]
+  },
+  "current-schema-id" : 0,
+  "schemas" : [ {
+    "type" : "struct",
+    "schema-id" : 0,
+    "fields" : [ {
+      "id" : 1,
+      "name" : "game_id",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 2,
+      "name" : "game_title",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 3,
+      "name" : "genre",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 4,
+      "name" : "platform",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 5,
+      "name" : "publisher",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 6,
+      "name" : "num_sales",
+      "required" : false,
+      "type" : "long"
+    }, {
+      "id" : 7,
+      "name" : "units_sold",
+      "required" : false,
+      "type" : "long"
+    }, {
+      "id" : 8,
+      "name" : "total_revenue",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 9,
+      "name" : "avg_discount",
+      "required" : false,
+      "type" : "double"
+    } ]
+  } ],
+  "partition-spec" : [ ],
+  "default-spec-id" : 0,
+  "partition-specs" : [ {
+    "spec-id" : 0,
+    "fields" : [ ]
+  } ],
+  "last-partition-id" : 999,
+  "default-sort-order-id" : 0,
+  "sort-orders" : [ {
+    "order-id" : 0,
+    "fields" : [ ]
+  } ],
+  "properties" : {
+    "owner" : "spark"
+  },
+  "current-snapshot-id" : 2572396593926990239,
+  "refs" : {
+    "main" : {
+      "snapshot-id" : 2572396593926990239,
+      "type" : "branch"
+    }
+  },
+  "snapshots" : [ {
+    "snapshot-id" : 2572396593926990239,
+    "timestamp-ms" : 1745101089337,
+    "summary" : {
+      "operation" : "append",
+      "spark.app.id" : "local-1745101066475",
+      "added-data-files" : "1",
+      "added-records" : "24",
+      "added-files-size" : "3639",
+      "changed-partition-count" : "1",
+      "total-records" : "24",
+      "total-files-size" : "3639",
+      "total-data-files" : "1",
+      "total-delete-files" : "0",
+      "total-position-deletes" : "0",
+      "total-equality-deletes" : "0"
+    },
+    "manifest-list" : "/data/warehouse/default/game_performance/metadata/snap-2572396593926990239-1-359ecaf0-6f54-4b03-8ffe-ace39c8440de.avro",
+    "schema-id" : 0
+  } ],
+  "statistics" : [ ],
+  "snapshot-log" : [ {
+    "timestamp-ms" : 1745101089337,
+    "snapshot-id" : 2572396593926990239
+  } ],
+  "metadata-log" : [ ]
+}

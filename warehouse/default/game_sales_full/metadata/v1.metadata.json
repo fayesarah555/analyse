@@ -1,0 +1,318 @@
+{
+  "format-version" : 1,
+  "table-uuid" : "1dfeb365-98d3-40ad-97da-6c6ce3f8135a",
+  "location" : "/data/warehouse/default/game_sales_full",
+  "last-updated-ms" : 1745101084231,
+  "last-column-id" : 23,
+  "schema" : {
+    "type" : "struct",
+    "schema-id" : 0,
+    "fields" : [ {
+      "id" : 1,
+      "name" : "sale_id",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 2,
+      "name" : "sale_date",
+      "required" : false,
+      "type" : "date"
+    }, {
+      "id" : 3,
+      "name" : "game_id",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 4,
+      "name" : "game_title",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 5,
+      "name" : "genre",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 6,
+      "name" : "platform",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 7,
+      "name" : "publisher",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 8,
+      "name" : "age_rating",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 9,
+      "name" : "release_date",
+      "required" : false,
+      "type" : "date"
+    }, {
+      "id" : 10,
+      "name" : "base_price",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 11,
+      "name" : "quantity",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 12,
+      "name" : "unit_price",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 13,
+      "name" : "discount_percentage",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 14,
+      "name" : "total_amount",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 15,
+      "name" : "sales_channel",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 16,
+      "name" : "store_name",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 17,
+      "name" : "sale_country",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 18,
+      "name" : "customer_id",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 19,
+      "name" : "segment",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 20,
+      "name" : "loyalty_status",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 21,
+      "name" : "age_group",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 22,
+      "name" : "year",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 23,
+      "name" : "month",
+      "required" : false,
+      "type" : "int"
+    } ]
+  },
+  "current-schema-id" : 0,
+  "schemas" : [ {
+    "type" : "struct",
+    "schema-id" : 0,
+    "fields" : [ {
+      "id" : 1,
+      "name" : "sale_id",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 2,
+      "name" : "sale_date",
+      "required" : false,
+      "type" : "date"
+    }, {
+      "id" : 3,
+      "name" : "game_id",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 4,
+      "name" : "game_title",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 5,
+      "name" : "genre",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 6,
+      "name" : "platform",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 7,
+      "name" : "publisher",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 8,
+      "name" : "age_rating",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 9,
+      "name" : "release_date",
+      "required" : false,
+      "type" : "date"
+    }, {
+      "id" : 10,
+      "name" : "base_price",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 11,
+      "name" : "quantity",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 12,
+      "name" : "unit_price",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 13,
+      "name" : "discount_percentage",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 14,
+      "name" : "total_amount",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 15,
+      "name" : "sales_channel",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 16,
+      "name" : "store_name",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 17,
+      "name" : "sale_country",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 18,
+      "name" : "customer_id",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 19,
+      "name" : "segment",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 20,
+      "name" : "loyalty_status",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 21,
+      "name" : "age_group",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 22,
+      "name" : "year",
+      "required" : false,
+      "type" : "int"
+    }, {
+      "id" : 23,
+      "name" : "month",
+      "required" : false,
+      "type" : "int"
+    } ]
+  } ],
+  "partition-spec" : [ {
+    "name" : "year",
+    "transform" : "identity",
+    "source-id" : 22,
+    "field-id" : 1000
+  }, {
+    "name" : "month",
+    "transform" : "identity",
+    "source-id" : 23,
+    "field-id" : 1001
+  } ],
+  "default-spec-id" : 0,
+  "partition-specs" : [ {
+    "spec-id" : 0,
+    "fields" : [ {
+      "name" : "year",
+      "transform" : "identity",
+      "source-id" : 22,
+      "field-id" : 1000
+    }, {
+      "name" : "month",
+      "transform" : "identity",
+      "source-id" : 23,
+      "field-id" : 1001
+    } ]
+  } ],
+  "last-partition-id" : 1001,
+  "default-sort-order-id" : 0,
+  "sort-orders" : [ {
+    "order-id" : 0,
+    "fields" : [ ]
+  } ],
+  "properties" : {
+    "owner" : "spark",
+    "write.format.default" : "parquet",
+    "write.parquet.compression-codec" : "snappy"
+  },
+  "current-snapshot-id" : 6607098072026699298,
+  "refs" : {
+    "main" : {
+      "snapshot-id" : 6607098072026699298,
+      "type" : "branch"
+    }
+  },
+  "snapshots" : [ {
+    "snapshot-id" : 6607098072026699298,
+    "timestamp-ms" : 1745101084231,
+    "summary" : {
+      "operation" : "append",
+      "spark.app.id" : "local-1745101066475",
+      "added-data-files" : "5",
+      "added-records" : "40",
+      "added-files-size" : "35981",
+      "changed-partition-count" : "5",
+      "total-records" : "40",
+      "total-files-size" : "35981",
+      "total-data-files" : "5",
+      "total-delete-files" : "0",
+      "total-position-deletes" : "0",
+      "total-equality-deletes" : "0"
+    },
+    "manifest-list" : "/data/warehouse/default/game_sales_full/metadata/snap-6607098072026699298-1-f666817f-d3da-4142-b4d1-d1f28d0b1045.avro",
+    "schema-id" : 0
+  } ],
+  "statistics" : [ ],
+  "snapshot-log" : [ {
+    "timestamp-ms" : 1745101084231,
+    "snapshot-id" : 6607098072026699298
+  } ],
+  "metadata-log" : [ ]
+}

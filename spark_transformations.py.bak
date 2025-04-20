@@ -1,0 +1,152 @@
+from pyspark.sql import SparkSession
+from pyspark.sql.functions import col, sum, avg, count, when, desc, date_format, month, year, round, concat, lit
+
+# Initialiser une session Spark
+spark = SparkSession.builder \
+    .appName("GameSalesDataProcessing") \
+    .config("spark.sql.warehouse.dir", "/user/hive/warehouse") \
+    .enableHiveSupport() \
+    .getOrCreate()
+
+# Lecture des fichiers CSV
+games_df = spark.read.option("header", "true").option("inferSchema", "true").csv("/path/to/games.csv")
+sales_df = spark.read.option("header", "true").option("inferSchema", "true").csv("/path/to/sales.csv")
+customers_df = spark.read.option("header", "true").option("inferSchema", "true").csv("/path/to/customers.csv")
+stores_df = spark.read.option("header", "true").option("inferSchema", "true").csv("/path/to/stores.csv")
+
+# Enregistrer les DataFrames comme des tables temporaires
+games_df.createOrReplaceTempView("games_temp")
+sales_df.createOrReplaceTempView("sales_temp")
+customers_df.createOrReplaceTempView("customers_temp")
+stores_df.createOrReplaceTempView("stores_temp")
+
+# Transformation 1: Enrichir les ventes avec des informations sur les jeux
+sales_enriched_df = spark.sql("""
+    SELECT 
+        s.sale_id, 
+        s.sale_date, 
+        s.game_id,
+        g.title as game_title,
+        g.genre,
+        g.platform,
+        s.quantity,
+        s.unit_price,
+        s.discount_percentage,
+        s.total_amount,
+        s.sales_channel,
+        s.store_id,
+        s.customer_id
+    FROM sales_temp s
+    JOIN games_temp g ON s.game_id = g.game_id
+""")
+
+# Transformation 2: Ajouter les informations client
+full_sales_df = spark.sql("""
+    SELECT 
+        s.sale_id, 
+        s.sale_date, 
+        s.game_id,
+        g.title as game_title,
+        g.genre,
+        g.platform,
+        g.publisher,
+        s.quantity,
+        s.unit_price,
+        s.discount_percentage,
+        s.total_amount,
+        s.sales_channel,
+        CASE WHEN s.sales_channel = 'store' THEN st.store_name ELSE 'Online' END as store_name,
+        CASE WHEN s.sales_channel = 'store' THEN st.country ELSE c.country END as sale_country,
+        c.customer_id,
+        c.segment,
+        c.loyalty_status,
+        c.age_group
+    FROM sales_temp s
+    JOIN games_temp g ON s.game_id = g.game_id
+    JOIN customers_temp c ON s.customer_id = c.customer_id
+    LEFT JOIN stores_temp st ON s.store_id = st.store_id
+""")
+
+# Enregistrement comme table dans le warehouse Hive
+full_sales_df.write.mode("overwrite").saveAsTable("game_sales_full")
+
+# Création de vues agrégées pour l'analyse
+
+# Vue 1: Ventes par mois et par plateforme
+monthly_platform_sales = spark.sql("""
+    SELECT 
+        date_format(sale_date, 'yyyy-MM') as month,
+        platform,
+        count(distinct sale_id) as num_sales,
+        sum(total_amount) as total_revenue,
+        avg(total_amount) as avg_sale_value
+    FROM game_sales_full
+    GROUP BY date_format(sale_date, 'yyyy-MM'), platform
+    ORDER BY month, platform
+""")
+monthly_platform_sales.write.mode("overwrite").saveAsTable("monthly_platform_sales")
+
+# Vue 2: Performance des jeux
+game_performance = spark.sql("""
+    SELECT 
+        game_id,
+        game_title,
+        genre,
+        platform,
+        publisher,
+        count(distinct sale_id) as num_sales,
+        sum(quantity) as units_sold,
+        sum(total_amount) as total_revenue,
+        avg(discount_percentage) as avg_discount
+    FROM game_sales_full
+    GROUP BY game_id, game_title, genre, platform, publisher
+    ORDER BY total_revenue DESC
+""")
+game_performance.write.mode("overwrite").saveAsTable("game_performance")
+
+# Vue 3: Segmentation client
+customer_segments = spark.sql("""
+    SELECT 
+        segment,
+        loyalty_status,
+        age_group,
+        country,
+        count(distinct customer_id) as num_customers,
+        count(distinct sale_id) as num_transactions,
+        sum(total_amount) as total_spent,
+        sum(total_amount)/count(distinct customer_id) as avg_spent_per_customer
+    FROM game_sales_full
+    GROUP BY segment, loyalty_status, age_group, country
+    ORDER BY total_spent DESC
+""")
+customer_segments.write.mode("overwrite").saveAsTable("customer_segments")
+
+# Vue 4: Performance des canaux de vente
+channel_performance = spark.sql("""
+    SELECT 
+        sales_channel,
+        CASE WHEN sales_channel = 'store' THEN store_name ELSE 'Online' END as store_or_online,
+        count(distinct sale_id) as num_sales,
+        sum(total_amount) as total_revenue,
+        sum(total_amount)/count(distinct sale_id) as avg_transaction_value
+    FROM game_sales_full
+    GROUP BY sales_channel, CASE WHEN sales_channel = 'store' THEN store_name ELSE 'Online' END
+    ORDER BY total_revenue DESC
+""")
+channel_performance.write.mode("overwrite").saveAsTable("channel_performance")
+
+# Vue 5: Tendances des genres de jeux
+genre_trends = spark.sql("""
+    SELECT 
+        date_format(sale_date, 'yyyy-MM') as month,
+        genre,
+        count(distinct sale_id) as num_sales,
+        sum(total_amount) as total_revenue
+    FROM game_sales_full
+    GROUP BY date_format(sale_date, 'yyyy-MM'), genre
+    ORDER BY month, total_revenue DESC
+""")
+genre_trends.write.mode("overwrite").saveAsTable("genre_trends")
+
+print("Toutes les transformations et vues ont été créées avec succès!")
+spark.stop()

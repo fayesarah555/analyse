@@ -1,0 +1,4 @@
+store_id,store_name,city,country,region,size_sqm
+101,GameZone Paris,Paris,France,Île-de-France,250
+102,GameZone Lyon,Lyon,France,Auvergne-Rhône-Alpes,180
+103,GameZone Marseille,Marseille,France,Provence-Alpes-Côte d'Azur,200

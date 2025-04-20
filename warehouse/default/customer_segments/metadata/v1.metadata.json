@@ -1,0 +1,146 @@
+{
+  "format-version" : 1,
+  "table-uuid" : "88137816-13c5-46ec-be60-612471b05573",
+  "location" : "/data/warehouse/default/customer_segments",
+  "last-updated-ms" : 1745101514693,
+  "last-column-id" : 8,
+  "schema" : {
+    "type" : "struct",
+    "schema-id" : 0,
+    "fields" : [ {
+      "id" : 1,
+      "name" : "segment",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 2,
+      "name" : "loyalty_status",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 3,
+      "name" : "age_group",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 4,
+      "name" : "country",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 5,
+      "name" : "num_customers",
+      "required" : false,
+      "type" : "long"
+    }, {
+      "id" : 6,
+      "name" : "num_transactions",
+      "required" : false,
+      "type" : "long"
+    }, {
+      "id" : 7,
+      "name" : "total_spent",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 8,
+      "name" : "avg_spent_per_customer",
+      "required" : false,
+      "type" : "double"
+    } ]
+  },
+  "current-schema-id" : 0,
+  "schemas" : [ {
+    "type" : "struct",
+    "schema-id" : 0,
+    "fields" : [ {
+      "id" : 1,
+      "name" : "segment",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 2,
+      "name" : "loyalty_status",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 3,
+      "name" : "age_group",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 4,
+      "name" : "country",
+      "required" : false,
+      "type" : "string"
+    }, {
+      "id" : 5,
+      "name" : "num_customers",
+      "required" : false,
+      "type" : "long"
+    }, {
+      "id" : 6,
+      "name" : "num_transactions",
+      "required" : false,
+      "type" : "long"
+    }, {
+      "id" : 7,
+      "name" : "total_spent",
+      "required" : false,
+      "type" : "double"
+    }, {
+      "id" : 8,
+      "name" : "avg_spent_per_customer",
+      "required" : false,
+      "type" : "double"
+    } ]
+  } ],
+  "partition-spec" : [ ],
+  "default-spec-id" : 0,
+  "partition-specs" : [ {
+    "spec-id" : 0,
+    "fields" : [ ]
+  } ],
+  "last-partition-id" : 999,
+  "default-sort-order-id" : 0,
+  "sort-orders" : [ {
+    "order-id" : 0,
+    "fields" : [ ]
+  } ],
+  "properties" : {
+    "owner" : "spark"
+  },
+  "current-snapshot-id" : 2709717790801544361,
+  "refs" : {
+    "main" : {
+      "snapshot-id" : 2709717790801544361,
+      "type" : "branch"
+    }
+  },
+  "snapshots" : [ {
+    "snapshot-id" : 2709717790801544361,
+    "timestamp-ms" : 1745101514693,
+    "summary" : {
+      "operation" : "append",
+      "spark.app.id" : "local-1745101491242",
+      "added-data-files" : "1",
+      "added-records" : "27",
+      "added-files-size" : "3220",
+      "changed-partition-count" : "1",
+      "total-records" : "27",
+      "total-files-size" : "3220",
+      "total-data-files" : "1",
+      "total-delete-files" : "0",
+      "total-position-deletes" : "0",
+      "total-equality-deletes" : "0"
+    },
+    "manifest-list" : "/data/warehouse/default/customer_segments/metadata/snap-2709717790801544361-1-e1fc0021-89cf-426b-8ccc-782ca54cacdc.avro",
+    "schema-id" : 0
+  } ],
+  "statistics" : [ ],
+  "snapshot-log" : [ {
+    "timestamp-ms" : 1745101514693,
+    "snapshot-id" : 2709717790801544361
+  } ],
+  "metadata-log" : [ ]
+}

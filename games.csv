@@ -1,0 +1,26 @@
+game_id,title,genre,platform,publisher,age_rating,release_date,base_price
+1,Stellar Quest,Action,PC,Galaxy Games,12,2023-03-15,49.99
+2,Stellar Quest,Action,PlayStation,Galaxy Games,12,2023-04-01,59.99
+3,Stellar Quest,Action,Xbox,Galaxy Games,12,2023-04-01,59.99
+4,Stellar Quest,Action,Switch,Galaxy Games,12,2023-06-10,54.99
+5,Medieval Champions,Strategy,PC,Historic Entertainment,16,2022-11-20,39.99
+6,Medieval Champions,Strategy,PlayStation,Historic Entertainment,16,2022-12-05,49.99
+7,Medieval Champions,Strategy,Xbox,Historic Entertainment,16,2022-12-05,49.99
+8,Cyber Realm,RPG,PC,Future Studios,18,2023-01-10,59.99
+9,Cyber Realm,RPG,PlayStation,Future Studios,18,2023-02-01,69.99
+10,Cyber Realm,RPG,Xbox,Future Studios,18,2023-02-01,69.99
+11,Farm Life Simulator,Simulation,PC,Rural Games,3,2022-08-15,34.99
+12,Farm Life Simulator,Simulation,Switch,Rural Games,3,2022-09-01,39.99
+13,Speed Racers,Sports,PC,Velocity Entertainment,7,2023-05-10,44.99
+14,Speed Racers,Sports,PlayStation,Velocity Entertainment,7,2023-05-20,54.99
+15,Speed Racers,Sports,Xbox,Velocity Entertainment,7,2023-05-20,54.99
+16,Speed Racers,Sports,Switch,Velocity Entertainment,7,2023-06-15,49.99
+17,Dungeon Explorer,Adventure,PC,Fantasy Games,12,2022-07-20,29.99
+18,Dungeon Explorer,Adventure,Switch,Fantasy Games,12,2022-08-10,39.99
+19,Battle Royale Masters,Action,PC,Combat Studios,16,2023-02-28,0.00
+20,Battle Royale Masters,Action,PlayStation,Combat Studios,16,2023-03-15,0.00
+21,Battle Royale Masters,Action,Xbox,Combat Studios,16,2023-03-15,0.00
+22,City Builder Pro,Simulation,PC,Urban Games,3,2022-10-05,39.99
+23,Space Explorer,Adventure,PC,Galaxy Games,7,2022-12-15,49.99
+24,Space Explorer,Adventure,PlayStation,Galaxy Games,7,2023-01-10,59.99
+25,Epic Legends,MOBA,PC,Fantasy Games,12,2021-11-01,0.00
